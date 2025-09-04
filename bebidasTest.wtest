@@ -17,8 +17,4 @@ describe "Test v0.1" {
   test "El peso de tito es 70" {
     assert.equals(70, tito.peso())
   }
-
-  test "" {
-    
-  }
 }
