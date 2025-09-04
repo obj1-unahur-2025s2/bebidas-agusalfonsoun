@@ -1,20 +1,45 @@
 import personajes.*
 import bebidas.*
 
-describe "Test v0.1" {
-  test "Si la dosis de whisky es 2 devuelve 0.81" {
-    assert.equals(0.81, whisky.rendimiento(2))
+describe "Prueba de bebidas" {
+  test "Rendimiento de Whisky para una dosis de 1 cm3" {
+    assert.equals(0.9, whisky.rendimiento(1))
   }
 
-  test "Si la dosis de terere es 334 devuelve 33.4" {
-    assert.equals(33.4, terere.rendimiento(334))
+  test "Rendimiento de Whisky para una dosis de 7 cm3" {
+    assert.equals(0.4782969, whisky.rendimiento(1))
   }
 
-  test "Si la dosis de cianuro es cualquier numero devuelve 0" {
-    assert.equals(0, cianuro.rendimiento(7))
+  test "Rendimiento de Cianuro para cualquier dosis de cm3" {
+    assert.equals(0, cianuro.rendimiento(1))
   }
 
-  test "El peso de tito es 70" {
+  test "Rendimiento de Terere para una dosis de 30 cm3" {
+    assert.equals(3, terere.rendimiento(30))
+  }
+
+  test "Rendimiento de Terere para una dosis de 6 cm3" {
+    assert.equals(1, terere.rendimiento(6))
+  }
+}
+
+describe "Pruebas de tito" {
+  test "Peso de tito" {
     assert.equals(70, tito.peso())
+  }
+
+  test "velocidad de Tito despues de consumir 3 cm3 de whisky" {
+    tito.consumir(3, whisky)
+    assert.equals(5.103, tito.velocidad())
+  }
+
+  test "velocidad de Tito despues de consumir 8 cm3 de Terere" {
+    tito.consumir(3, terere)
+    assert.equals(7, tito.velocidad())
+  }
+
+  test "velocidad de Tito despues de consumir 9 cm3 de Cianuro" {
+    tito.consumir(9, cianuro)
+    assert.equals(0, tito.velocidad())
   }
 }
