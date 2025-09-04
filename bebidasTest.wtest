@@ -1,0 +1,24 @@
+import personajes.*
+import bebidas.*
+
+describe "Test v0.1" {
+  test "Si la dosis de whisky es 2 devuelve 0.81" {
+    assert.equals(0.81, whisky.rendimiento(2))
+  }
+
+  test "Si la dosis de terere es 334 devuelve 33.4" {
+    assert.equals(33.4, terere.rendimiento(334))
+  }
+
+  test "Si la dosis de cianuro es cualquier numero devuelve 0" {
+    assert.equals(0, cianuro.rendimiento(7))
+  }
+
+  test "El peso de tito es 70" {
+    assert.equals(70, tito.peso())
+  }
+
+  test "" {
+    
+  }
+}
